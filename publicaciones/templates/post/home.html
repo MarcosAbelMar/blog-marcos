@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="py-5 text-center container">
+<div class="row py-lg-5">
+<div class="col-lg-6 col-md-8 mx-auto">
+    <h1 id="titulo">¡Bienvenido a mi Blog!</h1>
+    <p><span class="typed"></span></p>
+    <p class="lead text-body-secondary" id="Descripción"> Bienvenido a mi blog personal en donde hago
+        una recomendación de cursos, plataformas y canales de YouTube que yo mismo probe y te pueden ayudar
+        en tu camino del desarrollo de software.
+    </p>
+    <p>
+        <a href="{% url 'lista_post' %}" class="btn btn-primary my-2">¡Explorar cursos!</a>
+        <a href="{% url 'about_me' %}" class="btn btn-secondary my-2">¿Quién soy?</a>
+    </p>
+</div>
+</div>
+</div>
+{% endblock content %}

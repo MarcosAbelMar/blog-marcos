@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for post in blogposts %}
+            {% if post.categoria == 'Plataforma' %}
+            <a href="{% url 'detalles_post' pk=post.id %}" class="text-decoration-none text-dark">
+                <div class="col">
+                    <div class="card shadow-sm bg-dark text-light">
+                        <img src="{{ post.portada }}" alt="">
+                        </svg>
+                        <div class="card-body">
+                            <p class="card-text"> {{ post.resumen|truncatechars:62 }} </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span id="etiqueta_tipo" class="btn btn-secondary">{{ post.categoria }}</span>
+                                </div>
+                                <small class="text-body-secondary">{{ post.fecha | date:"d/m/Y"}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
